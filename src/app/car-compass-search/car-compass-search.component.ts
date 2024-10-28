@@ -128,7 +128,7 @@ export class CarCompassSearchComponent implements OnInit {
       this.GetVehicleTypesForMakeId();
     }
 
-    if (this.callModelsForMakeIdYear) {
+    if (this.callModelsForMakeIdYear) { 
       this.GetModelsForMakeIdYear();
     }
   }

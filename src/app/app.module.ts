@@ -8,7 +8,7 @@ import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { RadioButtonModule } from 'primeng/radiobutton'; 
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

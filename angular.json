@@ -14,7 +14,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "build": {
+        "build": { 
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/CarCompassWeb",

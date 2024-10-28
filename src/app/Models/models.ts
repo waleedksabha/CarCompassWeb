@@ -22,8 +22,8 @@ export class TypesForMakeModel {
 }
 
 export class ModelsForMakeIdYearModel {
-  make_ID: number | undefined;
-  make_Name: string | undefined;
+  make_ID: number | undefined; 
+  make_Name: string | undefined; 
   model_ID: number | undefined;
   model_Name: string | undefined;
 }

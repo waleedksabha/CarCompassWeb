@@ -11,7 +11,7 @@ describe('CarCompassSearchComponent', () => {
       declarations: [ CarCompassSearchComponent ]
     })
     .compileComponents();
-  });
+  }); 
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CarCompassSearchComponent);

@@ -20,7 +20,7 @@ export class CarCompassSearchService {
       .pipe(
         catchError(err => {
           return of(err);
-        })
+        }) 
       );
   }
 
