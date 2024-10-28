@@ -1,0 +1,108 @@
+<div class="form-control">
+  <div class="row">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-group">
+      <div class="form-control">
+        <div class="row">
+          <div *ngFor="let api of apis" class="col-md-4 d-flex align-items-center">
+            <p-radioButton [inputId]="api.key"
+                           [value]="api"
+                           formControlName="selectedApi">
+            </p-radioButton>
+            <label [for]="api.key" class="ml-2">
+              {{ api.name }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-12">
+        <div class="col-md-5">
+          <div class="form-group" *ngIf="showMakeIdField">
+            <label for="make" class="form-label">Make</label>
+            <input type="number"
+                   id="make"
+                   formControlName="make"
+                   class="form-control"
+                   [required]="showMakeIdField"
+                   placeholder="Enter Make" />
+          </div>
+        </div>
+        <!-- -->
+        <div class="col-md-5">
+          <div class="form-group" *ngIf="showModelIdField">
+            <label for="modelYear" class="form-label">Model Year</label>
+            <input type="number"
+                   id="modelYear"
+                   formControlName="modelYear"
+                   class="form-control"
+                   [required]="showModelIdField"
+                   placeholder="Enter Model Year" />
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <button type="submit" style="float: right; margin-top: 18px;" class="btn btn-primary">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="mt-4">
+      <div class="card">
+        <div class="card-header">
+          <h2>Vehicle Data</h2>
+        </div>
+        <div class="card-body">
+          <p-table [value]="lstAllMakesModel"
+                   [paginator]="true"
+                   [rows]="rows"
+                   [showCurrentPageReport]="true"
+                   responsiveLayout="scroll"
+                   currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                   class="table table-bordered">
+
+            <ng-template pTemplate="header">
+              <tr *ngIf="callAllMakes">
+                <th>ID</th>
+                <th>Make</th>
+              </tr>
+
+              <tr *ngIf="callVehicleTypesForMakeId">
+                <th>Vehicle Type Id</th>
+                <th>Vehicle Type Name</th>
+              </tr>
+
+              <tr *ngIf="callModelsForMakeIdYear">
+                <th>Make ID</th>
+                <th>Make Name</th>
+                <th>Model ID</th>
+                <th>Model Name</th>
+              </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-make>
+              <tr *ngIf="callAllMakes">
+                <td>{{ make.make_ID }}</td>
+                <td>{{ make.make_Name }}</td>
+              </tr>
+
+              <tr *ngIf="callVehicleTypesForMakeId">
+                <td>{{ make.vehicleTypeId }}</td>
+                <td>{{ make.vehicleTypeName }}</td>
+              </tr>
+
+              <tr *ngIf="callModelsForMakeIdYear">
+                <td>{{ make.make_ID }}</td>
+                <td>{{ make.make_Name }}</td>
+                <td>{{ make.model_ID }}</td>
+                <td>{{ make.model_Name }}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

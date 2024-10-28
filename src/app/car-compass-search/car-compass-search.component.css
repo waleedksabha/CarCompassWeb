@@ -1,0 +1,15 @@
+.table-bordered th, .table-bordered td {
+  border: 1px solid #0d6efd;
+  padding: 10px; 
+}
+
+.table-bordered th {
+  background-color: #0d6efd;
+  text-align: left;
+  color: white;
+}
+
+.card-header {
+  background-color: #0d6efd;
+  color: white;
+}
